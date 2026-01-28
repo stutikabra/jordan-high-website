@@ -54,40 +54,38 @@ window.addEventListener('load', () => {
 });
 
 allImages.forEach(img => {
-  img.style.cursor = 'pointer'; // change cursor
+  img.style.cursor = 'pointer';
 
   img.addEventListener('click', () => {
-    // Create overlay
     const overlay = document.createElement('div');
     overlay.classList.add('img-overlay');
 
-    // Create full-size image
+
     const fullImg = document.createElement('img');
     fullImg.src = img.src;
     fullImg.classList.add('full-img');
 
-    // Create close button
+
     const closeBtn = document.createElement('span');
     closeBtn.innerHTML = '&times;';
     closeBtn.classList.add('close-btn');
 
-    // Append everything
+
     overlay.appendChild(fullImg);
     overlay.appendChild(closeBtn);
     document.body.appendChild(overlay);
 
-    // Click close button to remove overlay
+
     closeBtn.addEventListener('click', (e) => {
-      e.stopPropagation(); // prevent overlay click
+      e.stopPropagation();
       overlay.remove();
     });
 
-    // Also click overlay (outside image) to close
+
     overlay.addEventListener('click', () => {
       overlay.remove();
     });
 
-    // Prevent clicking the image itself from closing
     fullImg.addEventListener('click', (e) => {
       e.stopPropagation();
     });

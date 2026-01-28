@@ -361,7 +361,7 @@ body.loaded {
 .video-section {
   position: relative;
   width: 100%;
-  height: 640px;
+  height: 100vh;
   overflow: hidden;
   padding: 0; 
 }
@@ -1028,4 +1028,271 @@ footer p {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+
+  /* GENERAL SECTION PADDING */
+  .section {
+    padding: 50px 5%;
+  }
+
+  /* NAVBAR */
+  .navbar {
+    padding: 10px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .nav-links ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* HERO */
+  .hero-text h1 {
+    font-size: clamp(2rem, 7vw, 3rem);
+    text-align: center;
+  }
+  .hero-text p {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    text-align: center;
+  }
+  .btn {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
+
+  .facilities-container {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    gap: 20px;
+  }
+
+  .facilities-text {
+    margin: 0;
+    text-align: center;
+  }
+
+  .facilities-images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 0;
+    width: 100%;
+  }
+
+  .facilities-images-left,
+  .facilities-images-right {
+    flex: none;       /* remove original widths */
+    width: 100%;      /* take full width of container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .facilities-images-left img,
+  .facilities-images-right img {
+    width: 90%;       /* responsive width */
+    max-width: 300px; /* optional: limit very large images */
+    height: auto;
+    margin: 0 auto;   /* center images inside flex column */
+  }
+
+  /* FINE ARTS SECTION */
+  .fine-arts-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .fine-arts-images {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .fine-arts-images img {
+    width: 90%;
+    height: auto;
+  }
+
+  /* QUOTE SECTION */
+  .quote-container {
+    flex-direction: column;
+    height: auto;
+  }
+  .quote-image,
+  .quote-text {
+    flex: 1 1 100%;
+    padding: 20px;
+  }
+
+
+  /* EXTRACURRICULARS */
+  .extracurriculars-container {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+  .extracurriculars-text {
+    text-align: center;
+    margin-left: 0;
+  }
+  .extracurriculars-images {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .extracurriculars-images img {
+    width: 90%;
+    height: auto;
+  }
+
+  /* NEWS */
+  .news-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .news-images img {
+    width: 90%;
+    height: auto;
+  }
+
+  /* GALLERY */
+  .gallery-grid {
+    column-count: 2; /* fewer columns on phones */
+    column-gap: 10px;
+  }
+  .gallery-grid img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* CONTACT */
+  .contact-form {
+    width: 100%;
+  }
+
+  /* PROGRAMS SECTIONS */
+  .programs-athletics,
+  .programs-fine-arts,
+  .programs-extracurriculars {
+    flex-direction: column;
+    padding: 20px 0;
+  }
+  .programs-athletics-images,
+  .programs-fine-arts-images,
+  .programs-extracurriculars-images {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .programs-athletics-images img,
+  .programs-fine-arts-images img,
+  .programs-extracurriculars-images img {
+    width: 90%;
+    height: auto;
+  }
+  .programs-athletics-text,
+  .programs-fine-arts-text,
+  .programs-extracurriculars-text {
+    margin-top: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 450px) {
+
+  /* ABOUT-US SECTION */
+  .about-us2-section {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px 5%;
+    gap: 20px;
+    text-align: center;
+  }
+  .about-us-images {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  .about-us-images img {
+    width: 90%;
+    height: auto;
+  }
+
+  /* VIDEO SECTION */
+  .video-section {
+    height: auto;       
+  }
+  .video-container {
+    height: auto;
+  }
+  .video {
+    position: relative; /* remove absolute positioning */
+    width: 100%;
+    height: auto;
+    transform: none;
+    object-fit: contain;
+  }
+  .video-text {
+    padding: 10px;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  /* EXTRACURRICULARS */
+  .extracurriculars-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  .extracurriculars-text {
+    margin-left: 0;
+    text-align: center;
+  }
+  .extracurriculars-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .extracurriculars-images img {
+    width: 90%;
+    height: auto;
+  }
+
+  /* NEWS SECTION */
+  .news-images {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  .news-images img {
+    width: 90%;
+    height: auto;
+  }
+
+  /* GENERAL TEXT ADJUSTMENTS */
+  .section h2,
+  .hero-text h1,
+  .hero-text p,
+  .video-text h2,
+  .video-text p {
+    text-align: center;
+  }
+}
+
+
+  
+  @media (max-width: 900px) {  /* tablets and smaller */
+  .video-section,
+  .video-container,
+  .video {
+    display: none;
+  }
 }
