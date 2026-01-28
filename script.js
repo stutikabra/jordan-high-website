@@ -2,6 +2,30 @@ const allImages = document.querySelectorAll('img');
 
 const sections = document.querySelectorAll('.section');
 
+const fadeElements = document.querySelectorAll('.fade-in');
+
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".contact-form");
+  const message = document.getElementById("form-message");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // stop page reload
+    message.style.display = "block";
+    form.reset();
+  });
+});
+
+const fadeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      fadeObserver.unobserve(entry.target); // optional: stop observing after fade-in
+    }
+  });
+}, { threshold: 0.1 });
+
+fadeElements.forEach(el => fadeObserver.observe(el));
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -14,6 +38,19 @@ sections.forEach(section => observer.observe(section));
 
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
+});
+
+window.addEventListener('load', () => {
+  const heroSection = document.querySelector('.hero');
+  const heroText = document.querySelector('.hero-text');
+
+  // fade in overlay first
+  heroSection.classList.add('visible');
+
+  // fade in text after overlay finishes (1.5s)
+  setTimeout(() => {
+    heroText.classList.add('visible');
+  }, 1000);
 });
 
 allImages.forEach(img => {

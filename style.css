@@ -24,6 +24,7 @@ body.loaded {
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
+  border-bottom: 1px solid #D4AF37; /* gold accent */
 }
 
 .nav-left {
@@ -90,27 +91,34 @@ body.loaded {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.55); /* subtle dark overlay so text pops */
+  background: rgba(0,0,0,0.55);
   z-index: 1;
+  opacity: 0;
+  transition: opacity 1.5s ease;
 }
 
 .hero-text {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 2;
   text-align: center;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 5px;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
 
-  /* Center the whole block inside hero */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.hero.visible .hero-overlay {
+  opacity: 1;
+}
 
-  /* Stack heading and paragraph tightly */
-  gap: 5px; /* small spacing between h1 and p */
+.hero-text.visible {
+  opacity: 1;
 }
 
 .hero-text h1 {
@@ -724,7 +732,7 @@ footer p {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  height: 550px;
+  height: 500px;
 }
 
 .about-us-text h2{
@@ -860,6 +868,11 @@ footer p {
     object-fit: cover;
     border: 2px solid #D4AF37;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.programs-athletics-images img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .programs-fine-arts {
@@ -1005,3 +1018,13 @@ footer p {
     box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px); /* slight upward movement */
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
