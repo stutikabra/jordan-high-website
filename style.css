@@ -187,7 +187,6 @@ body.loaded {
 
 .facilities-container {
   display: flex;
-  flex-wrap: wrap;
   gap: 40px;
   align-items: center;
   flex-direction: row;
