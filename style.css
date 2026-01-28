@@ -216,7 +216,7 @@ body.loaded {
 .facilities-images {
   display: flex;
   gap: 20px; /* space between left and right divs */
-  flex-wrap: wrap; /* responsive */
+  align-items: center;
 }
 
 .facilities-images-left,
@@ -227,7 +227,7 @@ body.loaded {
 }
 
 .facilities-images-left {
-  flex: 1 1 45%; /* left column width */
+  flex: 0 0 auto; /* left column width */
 }
 
 .facilities-images-left img {
