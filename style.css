@@ -197,6 +197,7 @@ body.loaded {
 .facilities-text {
   flex: 1 1 400px;
   max-width: 600px;
+  margin-right: 20px;
 }
 
 .facilities-text h2 {
@@ -219,6 +220,8 @@ body.loaded {
   gap: 20px; /* space between left and right divs */
   align-items: center;
   flex-wrap: nowrap;
+  justify-content: center;
+  flex: 1 1 500px;
 }
 
 .facilities-images-left,
